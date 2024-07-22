@@ -37,8 +37,8 @@ class LinkedList {
         return value;
     }
 
-    public int removeLast(){
-        if(length == 0) {
+    public int removeLast() {
+        if (length == 0) {
             return 0;
         }
         
