@@ -9,9 +9,11 @@ public class main {
         list.append(13);
         list.append(1345);
 
-        list.removeFirst();
-        System.out.println("get value: " + list.get(3).value);
-        System.out.println("set value: " + list.set(12, 1));
+        // list.removeFirst();
+        // System.out.println("get value: " + list.get(3).value);
+        // System.out.println("set value: " + list.set(12, 1));
+        // System.out.println("insert item: " + list.insert(123, 9));
+        System.out.println("Remove last:" + list.remove(2));
 
         list.printList();
     }

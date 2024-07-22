@@ -50,13 +50,13 @@ class LinkedList {
         return newNode.value;
     }
 
-    public int removeLast() {
+    public Node removeLast() {
         if (length == 0) {
-            return 0;
+            return null;
         } else if (length == 1) {
             head = null;
             tail = null;
-            return 0;
+            return null;
         } else {
             Node pre = head;
             Node temp = head;
@@ -70,7 +70,7 @@ class LinkedList {
             pre.next = null;
             tail = pre;
             length--;
-            return pre.value;
+            return pre;
         }
     }
 
@@ -113,6 +113,45 @@ class LinkedList {
             return true;
         }
         return false;
+    }
+
+    public boolean insert(int index, int value) {
+        System.out.println(length);
+        if (index < 0) {
+            return false;
+        } else if (index > length) {
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node temp = head;
+        Node next = null;
+        for (int i = 0; i < index - 1; i++) {
+            temp = temp.next;
+        }
+        next = temp.next;
+        temp.next = newNode;
+        newNode.next = next;
+        length++;
+        return true;
+    }
+
+    public Node remove(int index) {
+        if (index == 0) {
+            return removeFirst();
+        } else if (index == length - 1) {
+            return removeLast();
+        }
+        Node temp = head.next;
+        Node pre = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+            pre = pre.next;
+        }
+        temp = temp.next;
+        pre.next = null;
+        pre.next = temp;
+        return temp;
     }
 
 }
