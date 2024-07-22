@@ -8,6 +8,11 @@ public class main {
         list.append(112);
         list.append(13);
         list.append(1345);
+
+        list.removeFirst();
+        System.out.println("get value: " + list.get(3).value);
+        System.out.println("set value: " + list.set(12, 1));
+
         list.printList();
     }
 
