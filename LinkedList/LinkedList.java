@@ -1,12 +1,21 @@
 package LinkedList;
 
-class LinkedList {
+public class LinkedList {
 
     private Node head;
     private Node tail;
     private int length;
 
     public LinkedList() {
+    }
+
+    public Node getHead() {
+        return head;
+    }
+
+    public int length()
+    {
+        return length;
     }
 
     public LinkedList(int value) {
@@ -142,16 +151,32 @@ class LinkedList {
         } else if (index == length - 1) {
             return removeLast();
         }
-        Node temp = head.next;
-        Node pre = head;
-        for (int i = 0; i < index; i++) {
+        Node temp = head;
+        int x = 0;
+        while (x < index - 1) {
             temp = temp.next;
-            pre = pre.next;
+            x++;
         }
-        temp = temp.next;
-        pre.next = null;
-        pre.next = temp;
-        return temp;
+        Node nextNodes = temp.next;
+        temp.next = null;
+        temp.next = nextNodes.next;
+        length--;
+        return nextNodes;
+    }
+
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
     }
 
 }

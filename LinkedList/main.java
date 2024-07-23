@@ -8,14 +8,19 @@ public class main {
         list.append(112);
         list.append(13);
         list.append(1345);
+        list.append(1245);
+        list.append(1445);
 
         // list.removeFirst();
         // System.out.println("get value: " + list.get(3).value);
         // System.out.println("set value: " + list.set(12, 1));
         // System.out.println("insert item: " + list.insert(123, 9));
-        System.out.println("Remove last:" + list.remove(2));
+        // System.out.println("Remove:" + list.remove(6).value);
 
         list.printList();
+        list.reverse();
+        list.printList();
+
     }
 
 }
