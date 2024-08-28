@@ -13,8 +13,7 @@ public class LinkedList {
         return head;
     }
 
-    public int length()
-    {
+    public int length() {
         return length;
     }
 
@@ -125,7 +124,6 @@ public class LinkedList {
     }
 
     public boolean insert(int index, int value) {
-        System.out.println(length);
         if (index < 0) {
             return false;
         } else if (index > length) {
@@ -177,6 +175,31 @@ public class LinkedList {
             before = temp;
             temp = after;
         }
+    }
+
+    public void merge(LinkedList l2) {
+
+        int index = 0;
+        Node cTemp = head;
+        Node mTemp = l2.head;
+        while (cTemp != null && mTemp != null) {
+            if (cTemp.value > mTemp.value) {
+                insert(index, mTemp.value);
+                index++;
+                mTemp = mTemp.next;
+            } else {
+                // insert(cTemp.value, index);
+                index++;
+                cTemp = cTemp.next;
+            }
+        }
+
+        while (mTemp != null) {
+            insert(index, mTemp.value);
+            index++;
+            mTemp = mTemp.next;
+        }
+        // printList();
     }
 
 }
