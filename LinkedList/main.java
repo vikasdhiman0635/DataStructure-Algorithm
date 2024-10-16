@@ -1,6 +1,6 @@
 package LinkedList;
 
-public class main {
+class main {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList(2);
