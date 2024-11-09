@@ -1,13 +1,12 @@
 package Questions;
 
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 public class Q682 {
 
     public static void main(String[] args) {
 
-        String[] operations = { "1","C" };
+        String[] operations = { "5","2","C","D","+" };
         Stack<Integer> stack = new Stack<Integer>();
         for (int i = 0; i < operations.length; i++) {
             if (operations[i] == "C") {
